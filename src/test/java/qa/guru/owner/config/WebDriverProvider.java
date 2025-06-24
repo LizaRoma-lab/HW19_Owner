@@ -49,8 +49,6 @@ public class WebDriverProvider implements Supplier<WebDriver> {
 
     private WebDriver createRemoteDriver() {
         try {
-            System.setProperty("webdriver.remote.ssl", "false");
-
             Map<String, Object> selenoidOptions = new HashMap<>();
             selenoidOptions.put("enableVNC", true);
             selenoidOptions.put("enableVideo", false);
@@ -58,12 +56,14 @@ public class WebDriverProvider implements Supplier<WebDriver> {
             switch (config.getBrowser()) {
                 case CHROME:
                     ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.setBrowserVersion(config.getBrowserVersion());
+                    chromeOptions.setCapability("browserName", "chrome");
+                    chromeOptions.setCapability("browserVersion", config.getBrowserVersion());
                     chromeOptions.setCapability("selenoid:options", selenoidOptions);
                     return new RemoteWebDriver(config.remoteUrl(), chromeOptions);
                 case FIREFOX:
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    firefoxOptions.setBrowserVersion(config.getBrowserVersion());
+                    firefoxOptions.setCapability("browserName", "firefox");
+                    firefoxOptions.setCapability("browserVersion", config.getBrowserVersion());
                     firefoxOptions.setCapability("selenoid:options", selenoidOptions);
                     return new RemoteWebDriver(config.remoteUrl(), firefoxOptions);
                 default:
