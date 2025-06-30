@@ -3,11 +3,11 @@ plugins {
 }
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17) // Жёсткая привязка
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
-group 'org.example'
-version '1.0-SNAPSHOT'
+group = 'org.example'
+version  = '1.0-SNAPSHOT'
 
 
 repositories {
@@ -18,7 +18,7 @@ dependencies {
     testImplementation(
             'org.junit.jupiter:junit-jupiter-api:5.10.0',
             'org.seleniumhq.selenium:selenium-java:4.14.1',
-            'io.github.bonigarcia:webdrivermanager:5.6.3',
+            'io.github.bonigarcia:webdrivermanager:5.7.0',
             'org.aeonbits.owner:owner:1.0.12',
             'org.assertj:assertj-core:3.23.1'
     )
@@ -27,6 +27,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-    systemProperties System.getProperties()
-
 }

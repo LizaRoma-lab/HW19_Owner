@@ -1,4 +1,4 @@
-package qa.guru.owner;
+package tests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
