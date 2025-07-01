@@ -1,4 +1,4 @@
-package qa.guru.owner.config;
+package config;
 
 public enum Browser {
 

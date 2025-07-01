@@ -1,4 +1,4 @@
-package qa.guru.owner.config;
+package config;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.aeonbits.owner.ConfigFactory;
@@ -9,8 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.http.ClientConfig;
-import org.openqa.selenium.remote.http.HttpClient;
+
 
 import java.util.HashMap;
 import java.util.Map;
